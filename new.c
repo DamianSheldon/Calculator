@@ -43,6 +43,15 @@ int differ (const void * self, const void * b)
     return (* cp) -> differ(self, b);
 }
 
+void * clone (const void * self)
+{
+    const struct Class * const * cp = self;
+
+    assert(self && * cp && (* cp) -> clone);
+
+    return (* cp) -> clone(self);
+}
+
 size_t sizeOf(const void * self)
 {
     const struct Class * const * cp = self;
