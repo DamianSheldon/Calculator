@@ -4,6 +4,10 @@
  *  Created on: Jan 31, 2018
  *      Author: dongmeiliang
  */
+#include <stdlib.h>
+#include <assert.h>
+#include <stdarg.h>
+
 #include "new_private.h"
 #include "new.h"
 

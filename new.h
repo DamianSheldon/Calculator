@@ -8,6 +8,8 @@
 #ifndef NEW_H_
 #define NEW_H_
 
+#include <stddef.h>
+
 void * new (const void * _class, ...);
 void delete (void * self);
 

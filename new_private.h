@@ -8,6 +8,9 @@
 #ifndef NEW_PRIVATE_H_
 #define NEW_PRIVATE_H_
 
+#include <stddef.h>
+#include <stdarg.h>
+
 struct Class {
 	size_t size;
 	void * (* ctor) (void * self, va_list * app);

@@ -1,11 +1,20 @@
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+
 #include "String.h"
 #include "new.h"
 #include "new_private.h"
 
+static void * String_ctor (void * _self, va_list * app);
+static void * String_dtor(void * _self);
+static void * String_clone (const void * _self);
+static int String_differ(const void * _self, const void * _b);
+
 struct String {
     const void * class;
     char * text;
-}
+};
 
 static const struct Class _String = {
     sizeof(struct String),
@@ -40,7 +49,8 @@ static void * String_dtor(void * _self)
     return self;
 }
 
-static void * String_clone (const void * _self) {
+static void * String_clone (const void * _self) 
+{
     const struct String * self = _self;
 
     return new(String, self -> text);
@@ -61,3 +71,4 @@ static int String_differ(const void * _self, const void * _b)
 
     return strcmp(self -> text, b -> text);
 }
+
