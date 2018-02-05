@@ -1,7 +1,11 @@
+#include <stdarg.h>
+
+#include "Point.h"
+#include "Point_private.h"
 #include "Circle.h"
 #include "Circle_private.h"
-#include "new.h"
-#include "new_private.h"
+
+const void * Circle;
 
 static void Circle_draw (const void * _self)
 {

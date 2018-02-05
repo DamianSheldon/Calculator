@@ -55,7 +55,7 @@ SRCS_STRING = String.c
 
 SRCS_STRING_TESTS = $(SRCS_OBJECT_SUPPORT) $(SRCS_STRING) test_string.c
 
-SRCS_POINT_TESTS = Object.c Point.c test_point.c
+SRCS_POINT_TESTS = Object.c Point.c Circle.c test_point.c
 
 SRCS_C = $(SRCS_STRING) $(SRCS_OBJECT_SUPPORT)
 

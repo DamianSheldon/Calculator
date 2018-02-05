@@ -6,6 +6,6 @@
 struct Circle {
     const struct Point _;
     int rad;
-}
+};
 
 #endif /* CIRCLE_PRIVATE_H_ */
