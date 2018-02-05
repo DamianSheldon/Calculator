@@ -55,6 +55,8 @@ SRCS_STRING = String.c
 
 SRCS_STRING_TESTS = $(SRCS_OBJECT_SUPPORT) $(SRCS_STRING) test_string.c
 
+SRCS_POINT_TESTS = Object.c Point.c test_point.c
+
 SRCS_C = $(SRCS_STRING) $(SRCS_OBJECT_SUPPORT)
 
 .PHONY: all
@@ -64,8 +66,14 @@ all: $(SRCS_C)
 test_string: $(SRCS_STRING_TESTS)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@.app $(SRCS_STRING_TESTS) $(LIBS)
 
+test_point: $(SRCS_POINT_TESTS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@.app $(SRCS_POINT_TESTS) $(LIBS)
+
 .PHONY: clean
 clean: clean_test_string
 
 clean_test_string:
 	rm -rf test_string.app test_string.dSYM
+
+clean_test_point:
+	rm -rf test_point.app test_point.dSYM
